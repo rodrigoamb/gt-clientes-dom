@@ -33,7 +33,17 @@ form {
 }
 
 form input {
+  flex: 1 1 48%;
   padding: 0.8rem;
   border: 1px solid #cccccc;
   border-radius: 0.25rem;
+}
+
+form button {
+  padding: 0.8rem 2rem;
+  background-color: #3f83f8;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
 }
