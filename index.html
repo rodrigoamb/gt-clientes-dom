@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro Cliente</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
@@ -71,31 +72,31 @@
           </tbody>
         </table>
       </div>
+    </div>
 
-      <!-- Modal de edição -->
+    <!-- Modal de edição -->
 
-      <div class="modal" id="modal-editar">
-        <div class="modal-content">
-          <h2>Editar Cliente</h2>
-          <form id="form-edicao">
-            <input type="text" id="edit-nome" />
-            <input type="text" id="edit-sobrenome" />
-            <input type="text" id="edit-cpf" />
-            <input type="email" id="edit-email" />
-            <button type="submit">Salvar Alterações</button>
-            <button type="button" id="cancelar-edicao">Cancelar</button>
-          </form>
-        </div>
+    <div class="modal" id="modal-editar">
+      <div class="modal-content">
+        <h2>Editar Cliente</h2>
+        <form id="form-edicao">
+          <input type="text" id="edit-nome" />
+          <input type="text" id="edit-sobrenome" />
+          <input type="text" id="edit-cpf" />
+          <input type="email" id="edit-email" />
+          <button type="submit">Salvar Alterações</button>
+          <button type="button" id="cancelar-edicao">Cancelar</button>
+        </form>
       </div>
+    </div>
 
-      <!-- Modal de Confirmação -->
+    <!-- Modal de Confirmação -->
 
-      <div class="modal" id="modal-excluir">
-        <div class="modal-content">
-          <h3>Deseja realmente excluir este cliente?</h3>
-          <button id="confirmar-exclusao">Sim</button>
-          <button id="cancelar-exclusao">Não</button>
-        </div>
+    <div class="modal" id="modal-excluir">
+      <div class="modal-content">
+        <h3>Deseja realmente excluir este cliente?</h3>
+        <button id="confirmar-exclusao">Sim</button>
+        <button id="cancelar-exclusao">Não</button>
       </div>
     </div>
   </body>
