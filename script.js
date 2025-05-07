@@ -77,6 +77,7 @@ function renderizarTabela() {
     const btnExcluir = document.createElement("button");
     btnExcluir.textContent = "Excluir";
     btnExcluir.classList.add("excluir");
+    btnExcluir.onclick = () => abrirModalExcluir(index);
 
     tdAcoes.appendChild(btnEditar);
     tdAcoes.appendChild(btnExcluir);
@@ -120,5 +121,17 @@ formEdicao.addEventListener("submit", (event) => {
   fecharModalEditar();
   renderizarTabela();
 });
+
+function abrirModalExcluir(index) {
+  indexExcluindo = index;
+  modalExcluir.style.display = "flex";
+}
+
+function fecharModalExcluir() {
+  indexExcluindo = null;
+  modalExcluir.style.display = "none";
+}
+
+btnCancelarExclusao.addEventListener("click", fecharModalExcluir);
 
 renderizarTabela();
