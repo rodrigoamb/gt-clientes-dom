@@ -72,6 +72,7 @@ function renderizarTabela() {
     const btnEditar = document.createElement("button");
     btnEditar.textContent = "Editar";
     btnEditar.classList.add("editar");
+    btnEditar.onclick = () => abrirModalEditar(cliente, index);
 
     const btnExcluir = document.createElement("button");
     btnExcluir.textContent = "Excluir";
@@ -85,5 +86,39 @@ function renderizarTabela() {
     tabela.appendChild(tr);
   });
 }
+
+function abrirModalEditar(cliente, index) {
+  inputEditNome.value = cliente.nome;
+  inputEditSobrenome.value = cliente.sobrenome;
+  inputEditCpf.value = cliente.cpf;
+  inputEditEmail.value = cliente.email;
+
+  indexEditando = index;
+  modalEditar.style.display = "flex";
+}
+
+function fecharModalEditar() {
+  indexEditando = null;
+  modalEditar.style.display = "none";
+}
+
+btnCancelarEdicao.addEventListener("click", () => {
+  fecharModalEditar();
+});
+
+formEdicao.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  clientes[indexEditando] = {
+    nome: inputEditNome.value.trim(),
+    sobrenome: inputEditSobrenome.value.trim(),
+    cpf: inputEditCpf.value.trim(),
+    email: inputEditEmail.value.trim(),
+  };
+
+  indexEditando = null;
+  fecharModalEditar();
+  renderizarTabela();
+});
 
 renderizarTabela();
