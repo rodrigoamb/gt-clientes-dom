@@ -37,6 +37,10 @@ form.addEventListener("submit", (event) => {
   const cpf = inputCpf.value.trim();
   const email = inputEmail.value.trim();
 
+  if (!nome || !sobrenome || !cpf || !email) {
+    return;
+  }
+
   //preparar o objeto
   const objCliente = {
     nome,
@@ -116,6 +120,15 @@ formEdicao.addEventListener("submit", (event) => {
     cpf: inputEditCpf.value.trim(),
     email: inputEditEmail.value.trim(),
   };
+
+  if (
+    !inputEditNome.value ||
+    !inputEditSobrenome.value ||
+    !inputEditCpf.value ||
+    !inputEditEmail.value
+  ) {
+    return;
+  }
 
   indexEditando = null;
   fecharModalEditar();
