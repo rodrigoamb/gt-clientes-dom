@@ -132,6 +132,15 @@ function fecharModalExcluir() {
   modalExcluir.style.display = "none";
 }
 
+function confirmarExclusao() {
+  if (indexExcluindo !== null) {
+    clientes.splice(indexExcluindo, 1);
+    renderizarTabela();
+    fecharModalExcluir();
+  }
+}
+
+btnConfirmarExclusao.addEventListener("click", confirmarExclusao);
 btnCancelarExclusao.addEventListener("click", fecharModalExcluir);
 
 renderizarTabela();
