@@ -28,6 +28,7 @@ let indexEditando = null;
 let indexExcluindo = null;
 
 form.addEventListener("submit", (event) => {
+  //evita o carregamento da pagina após o submit do formulário
   event.preventDefault();
 
   //capturo aqui os valores digitados pelo usuário e coloco em variáveis
@@ -36,6 +37,7 @@ form.addEventListener("submit", (event) => {
   const cpf = inputCpf.value.trim();
   const email = inputEmail.value.trim();
 
+  //preparar o objeto
   const objCliente = {
     nome,
     sobrenome,
@@ -43,8 +45,10 @@ form.addEventListener("submit", (event) => {
     email,
   };
 
+  //Entrando com o objeto dentro do meu array
   clientes.push(objCliente);
 
+  //reseta os campos do formulário e renderiza a lista
   form.reset();
   renderizarTabela();
 });
